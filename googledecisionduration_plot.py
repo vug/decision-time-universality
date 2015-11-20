@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-%matplotlib inline
 
 fp = open("durations.txt", "rt")
 lines = fp.readlines()
