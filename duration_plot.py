@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-fp = open("durations.txt", "rt")
+fp = open("data/durations.txt", "rt")
 lines = fp.readlines()
 fp.close()
 

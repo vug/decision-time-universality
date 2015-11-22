@@ -1,12 +1,13 @@
 import requests
 from bs4 import BeautifulSoup
 import random
+import time
 
 # set the number of words to query
 nWords = 2000
 
 # use the dictionary that comes with unix systems
-fp = open('/usr/share/dict/web2', 'rt')
+fp = open('/usr/share/dict/words', 'rt') #pick the file words for linux
 dictionary = fp.readlines()
 fp.close()
 
@@ -15,7 +16,7 @@ idxs = range(len(dictionary))
 random.shuffle(idxs)
 idxs = idxs[:nWords]
 chosenWords = [dictionary[n][:-1] for n in idxs]
-
+chosenWordsRandom = [''.join(random.sample(chosenWords[i], len(chosenWords[i]))) for i in range(2000)]
 def googleSearchDuration(word):
     # returns the durations of a google search query
     query = 'https://www.google.co.uk/search?hl=en&q=%s&meta=&gws_rd=ssl'%(word)
@@ -31,9 +32,11 @@ def googleSearchDuration(word):
     return dur
 
 # write the results into a file
-fp = open("data/durations.txt", "wt")
-for k, word in enumerate(chosenWords):
+fp = open("data/durationsRandom.txt", "wt")
+for k, word in enumerate(chosenWordsRandom):
     dur = googleSearchDuration(word)
     fp.write('%f %s\n'%(dur, word))
     print k, dur, word
+    d=random.uniform(65,75)
+    time.sleep(d)
 fp.close()
