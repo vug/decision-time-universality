@@ -15,7 +15,8 @@ idxs = range(len(dictionary))
 random.shuffle(idxs)
 idxs = idxs[:nWords]
 chosenWords = [dictionary[n][:-1] for n in idxs]
-
+chosenWordsRandom = [''.join(random.sample(chosenWords[i],
+                     len(chosenWords[i]))) for i in range(2000)]
 def googleSearchDuration(word):
     # returns the durations of a google search query
     query = 'https://www.google.co.uk/search?hl=en&q=%s&meta=&gws_rd=ssl'%(word)
@@ -31,7 +32,7 @@ def googleSearchDuration(word):
     return dur
 
 # write the results into a file
-fp = open("durations.txt", "wt")
+fp = open("durationsR2.txt", "wt")
 for k, word in enumerate(chosenWords):
     dur = googleSearchDuration(word)
     fp.write('%f %s\n'%(dur, word))
