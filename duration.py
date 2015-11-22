@@ -3,10 +3,10 @@ from bs4 import BeautifulSoup
 import random
 
 # set the number of words to query
-nWords = 2000
+nWords = 1
 
 # use the dictionary that comes with unix systems
-fp = open('/usr/share/dict/web2', 'rt')
+fp = open('data/words', 'rt')
 dictionary = fp.readlines()
 fp.close()
 

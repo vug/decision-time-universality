@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-fp = open("data/durations.txt", "rt")
+fp = open("sample/durations.txt", "rt")
 lines = fp.readlines()
 fp.close()
 
@@ -17,5 +17,5 @@ plt.step(b[:-1], c, where='mid', lw=2)
 plt.xlabel('normalized duration')
 plt.ylabel('frequency')
 plt.title('distribution of normalized search durations')
-plt.savefig('distribution2.png')
+#plt.savefig('distribution2.png')
 plt.show()
