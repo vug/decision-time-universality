@@ -5,7 +5,7 @@ This script makes Google search queries of randomly chosen words and records the
 
 ## Usage
 - Edit `duration.py` to set the number of words. 
-- Run it via `python googledecisionduration.py`. 
+- Run it via `python googledecisionduration.py`
 - After it finishes you can plot the graph via `python duration_plot.py`.
 
 # References
